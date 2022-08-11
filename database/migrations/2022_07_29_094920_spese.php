@@ -22,11 +22,14 @@ return new class extends Migration
             $table->string('note', 200)->nullable();
             $table->foreignId('created_by');
             $table->foreignId('updated_by');
+            $table->foreignId('team');
             $table->foreign('account')->references('id')->on('users')
                 ->onDelete('cascade');
             $table->foreign('created_by')->references('id')->on('users')
                 ->onDelete('cascade');
             $table->foreign('updated_by')->references('id')->on('users')
+                ->onDelete('cascade');
+            $table->foreign('team')->references('id')->on('team')
                 ->onDelete('cascade');
             $table->timestamps($precision = 0);
             $table->softDeletes();
