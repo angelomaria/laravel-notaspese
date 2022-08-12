@@ -20,3 +20,5 @@ Route::post('store_envoice', [EnvoiceController::class, 'store_envoice']);
 Route::post('update_envoice', [EnvoiceController::class, 'update_envoice']);
 Route::post('delete_envoice', [EnvoiceController::class, 'delete_envoice']);
 Route::post('get_invoiced', [EnvoiceController::class, 'get_invoiced']);
+/** TEAM */
+Route::post('store_team', [TeamController::class, 'store_team']);
