@@ -42,7 +42,6 @@ class AuthController extends Controller
             'name' => 'required',
             'email' => 'required|email',
             'password' => 'required',
-            'password_confirmation' => 'required|same:password',
             'vat' => 'required',
             'coeff_redditivita' => 'required',
             'perc_contributi' => 'required',

@@ -20,7 +20,7 @@ class customer extends Model
      */
     protected $fillable = [
         'denominazione',
-        'var',
+        'vat',
         'fiscal_code',
         'paese',
         'cap',

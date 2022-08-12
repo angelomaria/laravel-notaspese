@@ -22,7 +22,14 @@ class User extends Authenticatable
         'email',
         'password',
         'avatar',
-        'tel'
+        'tel',
+        'vat',
+        'coeff_redditivita',
+        'perc_contributi',
+        'business_name',
+        'age',
+        'address',
+        'bio'
     ];
 
     /**
