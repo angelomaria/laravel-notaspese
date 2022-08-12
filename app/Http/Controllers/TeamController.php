@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Symfony\Component\HttpFoundation\Response;
 
+
 class TeamController extends Controller
 {
 
@@ -28,7 +29,9 @@ class TeamController extends Controller
 
         $team = team::create($data);
         $HasTeamController = new HasTeamController();
-        $hasTeam = $HasTeamController->store_has_team($team['id'], $data['user']);
+        $hasTeam = "";
+        if($data['user'])
+            $hasTeam = $HasTeamController->store_has_team($team['id'], $data['user']);
 
         $response =  self::HTTP_CREATED;
         $results = [
