@@ -21,6 +21,13 @@ return new class extends Migration
             $table->string('tel')->nullable();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
+            $table->string('vat', 15);
+            $table->integer('coeff_redditivita');
+            $table->integer('perc_contributi');
+            $table->string('business_name', 255)->nullable();
+            $table->integer('age')->nullable();
+            $table->string('address', 200)->nullable();
+            $table->string('bio', 500)->nullable();
             $table->timestamps();
         });
     }

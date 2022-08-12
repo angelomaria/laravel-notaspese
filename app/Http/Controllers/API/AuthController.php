@@ -43,6 +43,9 @@ class AuthController extends Controller
             'email' => 'required|email',
             'password' => 'required',
             'password_confirmation' => 'required|same:password',
+            'vat' => 'required',
+            'coeff_redditivita' => 'required',
+            'perc_contributi' => 'required',
         ]);
 
         if ($validator->fails()) {
@@ -52,7 +55,7 @@ class AuthController extends Controller
         $data = $request->all();
         $data['password'] = Hash::make($data['password']);
         $user = User::create($data);
-        $success['token'] = $this->get_user_token($user, "TestToken");
+        $success['token'] = $this->get_user_token($user, "AuthToken");
         $success['name'] =  $user->name;
         $response =  self::HTTP_CREATED;
         return $this->get_http_response("success", $success, $response);
